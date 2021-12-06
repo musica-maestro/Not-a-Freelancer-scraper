@@ -1,0 +1,16 @@
+Content-Length: 181831
+Content-Type: text/html; charset=UTF-8
+Server: nginx
+Cache-Control: s-maxage=3600
+Content-Encoding: gzip
+Strict-Transport-Security: max-age=2592000
+X-Request-Id: 2e5f6794357aa61d0fd774c5a7d5a818
+X-Frame-Options: SAMEORIGIN
+Via: 1.1 varnish, 1.1 varnish
+Accept-Ranges: bytes
+Date: Mon, 06 Dec 2021 19:30:57 GMT
+X-Served-By: cache-bwi5173-BWI, cache-ams21030-AMS
+X-Cache: HIT, MISS, HIT
+X-Cache-Hits: 0, 1
+Vary: Accept-Encoding, X-Authenticated, X-Request-Host
+X-Fastly-Request-Id: 607cbb9c-505b-4ed0-a571-76b1ef97e175

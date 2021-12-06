@@ -1,0 +1,16 @@
+Content-Length: 113
+Content-Type: text/html
+Server: nginx
+Location: https://www.freelancer.com/freelancers/skills/wordpress
+Content-Encoding: gzip
+Strict-Transport-Security: max-age=2592000
+X-Request-Id: 19026963583e9aa6c9e92559ff6e8f31
+X-Frame-Options: SAMEORIGIN
+Accept-Ranges: bytes
+Via: 1.1 varnish, 1.1 varnish
+Date: Mon, 06 Dec 2021 19:30:51 GMT
+X-Served-By: cache-bwi5152-BWI, cache-ams21030-AMS
+X-Cache: MISS, MISS, MISS
+X-Cache-Hits: 0, 0
+Vary: Accept-Encoding, X-Request-Host
+X-Fastly-Request-Id: 15595f85-44e9-4a10-ad10-6a2b1074e39a

@@ -1,15 +1,22 @@
 from scrapy.item import Item, Field
 from itemloaders.processors import MapCompose, TakeFirst
-import re
+from datetime import datetime
 
-def extract_votes_number(text):
-    try:
-        return text.split()[0]
-    except:
-        return 'no available'
+datetime_object = datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
+
+def clean_username(text):
+    return text[1::]
+
+def parse_date(text):
+    return text
+    return datetime.strptime(text.replace('Joined ', ''), '%b %d, %Y')
 
 class FreelancerItem(Item):
     username  = Field(
+        input_processor = MapCompose(clean_username),
+        output_processor = TakeFirst()
+    )
+    description  = Field(
         input_processor = MapCompose(str.strip),
         output_processor = TakeFirst()
     )
@@ -53,7 +60,7 @@ class FreelancerItem(Item):
         input_processor = MapCompose(str.strip),
         output_processor = TakeFirst()
     )
-    avg_price  = Field(
+    price_per_hour  = Field(
         input_processor = MapCompose(str.strip),
         output_processor = TakeFirst()
     )

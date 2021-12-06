@@ -1,0 +1,18 @@
+Content-Length: 132781
+Content-Type: text/html; charset=utf-8
+Server: nginx
+Status: 200 OK
+Cache-Control: public, s-maxage=60, stale-while-revalidate=86400
+Etag: W/"d6c8a-KizTjPuhaBlvY/wMAbKQqS3O07o"
+Content-Encoding: gzip
+Strict-Transport-Security: max-age=2592000
+X-Request-Id: a01b43084291543cdf5789ba53fe6c13
+X-Frame-Options: SAMEORIGIN
+Via: 1.1 varnish, 1.1 varnish
+Accept-Ranges: bytes
+Date: Mon, 06 Dec 2021 15:56:20 GMT
+X-Served-By: cache-bwi5172-BWI, cache-mxp6936-MXP
+X-Cache: HIT, HIT, HIT
+X-Cache-Hits: 1, 1
+Vary: Accept-Encoding, X-Varnish-Cookie-Language, X-Authenticated, X-Request-Host
+X-Fastly-Request-Id: 037bf74a-55fc-4128-8d7a-01d659d50bc2

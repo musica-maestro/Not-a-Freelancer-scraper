@@ -12,14 +12,16 @@ BOT_NAME = 'freelancer'
 SPIDER_MODULES = ['freelancer.spiders']
 NEWSPIDER_MODULE = 'freelancer.spiders'
 
+#LOG_ENABLED = False
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = False
+ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-#CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 64
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
@@ -85,7 +87,36 @@ AUTOTHROTTLE_ENABLED = True
 # Enable and configure HTTP caching (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
 #HTTPCACHE_ENABLED = True
-#HTTPCACHE_EXPIRATION_SECS = 0
+#HTTPCACHE_EXPIRATION_SECS = 200
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+
+## USING COLORS ON LOG
+
+import copy
+from colorlog import ColoredFormatter
+import scrapy.utils.log
+color_formatter = ColoredFormatter(
+    (
+        '%(log_color)s%(levelname)-5s%(reset)s '
+        '%(yellow)s[%(asctime)s]%(reset)s'
+        '%(white)s %(name)s %(funcName)s %(bold_purple)s:%(lineno)d%(reset)s '
+        '%(log_color)s%(message)s%(reset)s'
+    ),
+    datefmt='%y-%m-%d %H:%M:%S',
+    log_colors={
+        'DEBUG': 'blue',
+        'INFO': 'bold_cyan',
+        'WARNING': 'red',
+        'ERROR': 'bg_bold_red',
+        'CRITICAL': 'red,bg_white',
+    }
+)
+_get_handler = copy.copy(scrapy.utils.log._get_handler)
+def _get_handler_custom(*args, **kwargs):
+    handler = _get_handler(*args, **kwargs)
+    handler.setFormatter(color_formatter)
+    return handler
+scrapy.utils.log._get_handler = _get_handler_custom
